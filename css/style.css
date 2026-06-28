@@ -231,8 +231,15 @@ img { max-width: 100%; display: block; }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-.hero-art { aspect-ratio: 1600 / 1509; }
-.hero-art img { object-position: center; }
+.hero-art {
+  margin: 0;
+  align-self: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.hero-art img { width: 100%; height: auto; display: block; }
 
 /* ---------- SECTIONS ---------- */
 .section {
