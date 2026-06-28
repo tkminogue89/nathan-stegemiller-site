@@ -303,6 +303,56 @@ img { max-width: 100%; display: block; }
 }
 .work-note a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
 
+/* ---------- STUDIO SALE ---------- */
+.sale-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+}
+.sale-item { display: flex; flex-direction: column; }
+.sale-item.sold .art-placeholder { opacity: 0.55; }
+
+.sale-info { padding-top: 0.9rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.sale-row { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+.sale-row h3 { font-size: 1.15rem; }
+
+.badge {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge.available { color: var(--accent); background: rgba(47, 93, 82, 0.1); }
+.badge.sold-badge { color: var(--ink-soft); background: var(--line); }
+
+.sale-meta { color: var(--ink-soft); font-size: 0.85rem; margin: 0; }
+.sale-price { margin: 0.2rem 0 0.6rem; font-family: "Space Grotesk", system-ui, sans-serif; }
+.sale-price .was { color: var(--ink-soft); text-decoration: line-through; margin-right: 0.5rem; font-size: 0.95rem; }
+.sale-price .now { color: var(--accent); font-weight: 600; font-size: 1.15rem; }
+
+.btn-sm {
+  align-self: flex-start;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.72rem;
+  margin-top: auto;
+}
+.btn-disabled {
+  border-color: var(--line);
+  color: var(--ink-soft);
+  cursor: default;
+  pointer-events: none;
+}
+
+.sale-note {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+.sale-note a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
+
 /* ---------- CONTACT ---------- */
 .contact-grid {
   display: grid;
@@ -369,6 +419,7 @@ a.contact-card:hover { border-color: var(--accent); transform: translateY(-3px);
   .contact-grid { grid-template-columns: 1fr; }
   .process { grid-template-columns: repeat(2, 1fr); }
   .details-grid { grid-template-columns: repeat(2, 1fr); }
+  .sale-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
@@ -376,4 +427,5 @@ a.contact-card:hover { border-color: var(--accent); transform: translateY(-3px);
   .gallery .wide { grid-column: span 1; }
   .process { grid-template-columns: 1fr; }
   .details-grid { grid-template-columns: 1fr; }
+  .sale-grid { grid-template-columns: 1fr; }
 }
