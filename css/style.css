@@ -67,6 +67,15 @@ img { max-width: 100%; display: block; }
 .nav a { color: var(--ink-soft); transition: color 0.2s; }
 .nav a:hover { color: var(--accent); }
 
+.nav .nav-cta {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.45rem 0.95rem;
+  letter-spacing: 0.12em;
+}
+.nav .nav-cta:hover { background: var(--accent); color: var(--bg); }
+
 .nav-toggle {
   display: none;
   background: none;
@@ -188,6 +197,11 @@ img { max-width: 100%; display: block; }
 }
 .btn:hover { background: var(--accent); color: var(--bg); }
 
+.btn-ghost { border-color: var(--line); color: var(--ink-soft); }
+.btn-ghost:hover { background: transparent; border-color: var(--accent); color: var(--accent); }
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
 .hero-art { min-height: 420px; }
 
 /* ---------- SECTIONS ---------- */
@@ -224,23 +238,70 @@ img { max-width: 100%; display: block; }
 .about-text p { color: var(--ink-soft); margin: 0 0 1.2rem; max-width: 60ch; }
 .about .small { min-height: 360px; position: sticky; top: 90px; }
 
-/* ---------- EXHIBITIONS ---------- */
-.exh-list { list-style: none; margin: 0; padding: 0; }
-.exh-list li {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--line);
+/* ---------- COMMISSIONS ---------- */
+.commissions { background: var(--bg-alt); border-radius: var(--radius); }
+
+.process {
+  list-style: none;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+  counter-reset: step;
 }
-.exh-list .year {
+.process li {
+  border-top: 2px solid var(--accent);
+  padding-top: 1.1rem;
+}
+.process .step-no {
   font-family: "Space Grotesk", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 1.05rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
   color: var(--accent);
-  min-width: 4rem;
 }
-.exh-detail { color: var(--ink-soft); }
-.exh-detail strong { color: var(--ink); font-weight: 500; }
+.process h3 { font-size: 1.25rem; margin: 0.5rem 0 0.5rem; }
+.process p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+}
+.detail .detail-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.detail p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+
+.commission-cta {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.commission-cta p {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.work-note {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.work-note a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
 
 /* ---------- CONTACT ---------- */
 .contact-grid {
@@ -306,9 +367,13 @@ a.contact-card:hover { border-color: var(--accent); transform: translateY(-3px);
   .gallery .wide { grid-column: span 2; }
   .gallery .tall { grid-row: span 1; }
   .contact-grid { grid-template-columns: 1fr; }
+  .process { grid-template-columns: repeat(2, 1fr); }
+  .details-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
   .gallery { grid-template-columns: 1fr; }
   .gallery .wide { grid-column: span 1; }
+  .process { grid-template-columns: 1fr; }
+  .details-grid { grid-template-columns: 1fr; }
 }
