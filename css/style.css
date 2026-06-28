@@ -95,6 +95,9 @@ img { max-width: 100%; display: block; }
 .nav a { color: var(--ink-soft); transition: color 0.2s; }
 .nav a:hover { color: var(--accent); }
 
+.ig-link { display: inline-flex; align-items: center; gap: 0.4rem; }
+.ig-link svg { display: block; }
+
 .nav .nav-cta {
   color: var(--accent);
   border: 1px solid var(--accent);
