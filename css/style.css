@@ -231,7 +231,8 @@ img { max-width: 100%; display: block; }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-.hero-art { min-height: 420px; }
+.hero-art { aspect-ratio: 1600 / 1509; }
+.hero-art img { object-position: center; }
 
 /* ---------- SECTIONS ---------- */
 .section {
@@ -479,7 +480,6 @@ a.contact-card:hover { border-color: var(--accent); transform: translateY(-3px);
   .nav.open a { padding: 0.85rem clamp(1.25rem, 4vw, 3rem); }
   .nav-toggle { display: inline-block; }
   .hero { grid-template-columns: 1fr; }
-  .hero-art { min-height: 320px; }
   .about { grid-template-columns: 1fr; }
   .about .small { position: static; min-height: 300px; max-width: 320px; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
