@@ -326,7 +326,6 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 .badge.available { color: var(--accent); background: rgba(47, 93, 82, 0.1); }
-.badge.deal { color: var(--bg); background: var(--accent); }
 .badge.sold-badge { color: var(--ink-soft); background: var(--line); }
 
 .sale-meta { color: var(--ink-soft); font-size: 0.85rem; margin: 0; }
