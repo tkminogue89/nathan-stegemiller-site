@@ -152,6 +152,35 @@ img { max-width: 100%; display: block; }
 .square { aspect-ratio: 1 / 1; }
 .portrait { aspect-ratio: 4 / 5; }
 
+/* ---------- REAL ARTWORK FRAMES ---------- */
+.artframe {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.artframe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.artframe figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  background: rgba(244, 241, 234, 0.92);
+  border-top: 1px solid var(--line);
+  padding: 0.55rem 0.85rem;
+}
+
 /* ---------- HERO ---------- */
 .hero {
   max-width: var(--maxw);
@@ -350,7 +379,7 @@ img { max-width: 100%; display: block; }
   gap: clamp(1.2rem, 2.5vw, 2rem);
 }
 .sale-item { display: flex; flex-direction: column; }
-.sale-item.sold .art-placeholder { opacity: 0.55; }
+.sale-item.sold .artframe { opacity: 0.55; }
 
 .sale-info { padding-top: 0.9rem; display: flex; flex-direction: column; gap: 0.35rem; }
 .sale-row { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
