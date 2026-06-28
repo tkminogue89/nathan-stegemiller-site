@@ -303,6 +303,38 @@ img { max-width: 100%; display: block; }
 }
 .work-note a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
 
+/* ---------- FAQ ---------- */
+.faq-list { max-width: 780px; }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list details:first-of-type { border-top: 1px solid var(--line); }
+.faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.2rem 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: clamp(1.02rem, 2vw, 1.15rem);
+  color: var(--ink);
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--accent);
+  flex: none;
+}
+.faq-list details[open] summary::after { content: "\2013"; }
+.faq-list details p {
+  margin: 0 0 1.3rem;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
 /* ---------- STUDIO SALE ---------- */
 .sale-grid {
   display: grid;
