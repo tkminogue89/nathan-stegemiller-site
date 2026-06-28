@@ -237,6 +237,14 @@ img { max-width: 100%; display: block; }
 .about-text h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1.2rem; }
 .about-text p { color: var(--ink-soft); margin: 0 0 1.2rem; max-width: 60ch; }
 .about .small { min-height: 360px; position: sticky; top: 90px; }
+.about-photo { margin: 0; position: sticky; top: 90px; }
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
 
 /* ---------- COMMISSIONS ---------- */
 .commissions { background: var(--bg-alt); border-radius: var(--radius); }
