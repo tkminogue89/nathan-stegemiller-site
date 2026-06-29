@@ -90,6 +90,7 @@ img { max-width: 100%; display: block; }
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 1.7rem;
   font-size: 0.78rem;
   text-transform: uppercase;
