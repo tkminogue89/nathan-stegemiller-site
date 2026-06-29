@@ -190,7 +190,7 @@
           </figure>
           <div class="sale-info">
             <p class="sale-price"><span class="now">$100</span></p>
-            <a class="btn btn-sm" href="mailto:studio@nathanstegemiller.com?subject=Studio%20Sale%20inquiry%20%2350">Inquire to buy</a>
+            <button type="button" class="btn btn-sm js-buy" data-piece="Studio Sale · piece #50 ($100)">Inquire to buy</button>
           </div>
         </article>
 
@@ -200,7 +200,7 @@
           </figure>
           <div class="sale-info">
             <p class="sale-price"><span class="now">$125</span></p>
-            <a class="btn btn-sm" href="mailto:studio@nathanstegemiller.com?subject=Studio%20Sale%20inquiry%20%2359">Inquire to buy</a>
+            <button type="button" class="btn btn-sm js-buy" data-piece="Studio Sale · piece #59 ($125)">Inquire to buy</button>
           </div>
         </article>
 
@@ -210,7 +210,7 @@
           </figure>
           <div class="sale-info">
             <p class="sale-price"><span class="was">$50</span> <span class="now">$25</span></p>
-            <a class="btn btn-sm" href="mailto:studio@nathanstegemiller.com?subject=Studio%20Sale%20inquiry%20%2369">Inquire to buy</a>
+            <button type="button" class="btn btn-sm js-buy" data-piece="Studio Sale · piece #69 ($25)">Inquire to buy</button>
           </div>
         </article>
 
@@ -295,19 +295,50 @@
         <h2>Start a commission</h2>
         <p>Tell me about your space and what you have in mind. I'll get back to you to talk through ideas, scale, and pricing.</p>
       </div>
-      <div class="contact-grid">
-        <a class="contact-card" href="mailto:studio@nathanstegemiller.com?subject=Commission%20inquiry">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">studio@nathanstegemiller.com</span>
-        </a>
-        <a class="contact-card" href="https://www.instagram.com/natesteg.art/" target="_blank" rel="noopener">
-          <span class="contact-label">Instagram</span>
-          <span class="contact-value">@natesteg.art ↗</span>
-        </a>
-        <div class="contact-card">
-          <span class="contact-label">Studio</span>
-          <span class="contact-value">Brooklyn, New York</span>
-        </div>
+      <div class="contact-layout">
+        <form class="inquiry-form" id="inquiry-form" novalidate>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="f-subject">What are you interested in?</label>
+            <select id="f-subject" name="topic">
+              <option value="Commission">A custom commission</option>
+              <option value="Studio Sale">A Studio Sale piece</option>
+              <option value="General">General question</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-regarding">Regarding <span class="opt">(optional)</span></label>
+            <input id="f-regarding" name="regarding" type="text" placeholder="e.g. a specific piece, or your room" />
+          </div>
+          <div class="field">
+            <label for="f-message">Tell me about your space &amp; what you have in mind</label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send inquiry</button>
+          <p class="form-note" id="form-note">Sends straight to the studio — no email app required. Each inquiry gets a unique reference so we can keep track.</p>
+        </form>
+
+        <aside class="contact-info">
+          <div class="contact-card">
+            <span class="contact-label">Email</span>
+            <a class="contact-value" href="mailto:natesteg.art@gmail.com">natesteg.art@gmail.com</a>
+          </div>
+          <a class="contact-card" href="https://www.instagram.com/natesteg.art/" target="_blank" rel="noopener">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@natesteg.art ↗</span>
+          </a>
+          <div class="contact-card">
+            <span class="contact-label">Studio</span>
+            <span class="contact-value">Brooklyn, New York · pickup only</span>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
