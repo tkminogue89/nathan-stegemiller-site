@@ -86,6 +86,13 @@ if (form) {
         note.innerHTML = `Thank you — your inquiry is in. Your reference is <strong>${ref}</strong>; I'll be in touch soon.`;
         note.classList.add("form-note-sent");
         submitBtn.style.display = "none";
+      } else if ((data.message || "").toLowerCase().includes("activat")) {
+        // One-time FormSubmit activation pending (owner setup only)
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send inquiry";
+        note.textContent =
+          "Form setup is being activated — please try again in a moment.";
+        note.classList.add("form-note-error");
       } else {
         throw new Error("send failed");
       }
