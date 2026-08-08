@@ -9,6 +9,28 @@ nav.addEventListener("click", (e) => {
   if (e.target.closest("a")) nav.classList.remove("open");
 });
 
+// Gallery carousel: arrows + "See all work" expand toggle
+const gallery = document.getElementById("gallery");
+if (gallery) {
+  const wrap = document.getElementById("gallery-carousel");
+  const prev = document.getElementById("gallery-prev");
+  const next = document.getElementById("gallery-next");
+  const toggle = document.getElementById("gallery-toggle");
+
+  const step = () => Math.max(240, gallery.clientWidth * 0.8);
+  if (prev) prev.addEventListener("click", () => gallery.scrollBy({ left: -step(), behavior: "smooth" }));
+  if (next) next.addEventListener("click", () => gallery.scrollBy({ left: step(), behavior: "smooth" }));
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const expanded = gallery.classList.toggle("show-all");
+      wrap.classList.toggle("expanded", expanded);
+      toggle.textContent = expanded ? "Show less" : "See all work";
+      if (!expanded) document.getElementById("work").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+}
+
 // Inquiry form (FormSubmit) — submits in-page, no email app
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/natesteg.art@gmail.com";
 
