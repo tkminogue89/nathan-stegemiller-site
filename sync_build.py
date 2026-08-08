@@ -80,11 +80,13 @@ def ensure_image(row):
         return dest_rel
     if ref:
         try:
-            nn = f"{int(ref):02d}"
-            if os.path.exists(os.path.join(ROOT, "images", "catalog", f"{nn}.jpg")):
-                return f"images/catalog/{nn}.jpg"
+            n = int(ref)
         except ValueError:
-            pass
+            return None
+        # prefer a high-res art-<ref>.jpg if present (e.g. the hero), else catalog thumb
+        for cand in (f"images/art-{n}.jpg", f"images/catalog/{n:02d}.jpg"):
+            if os.path.exists(os.path.join(ROOT, cand)):
+                return cand
     return None
 
 def truthy(v):
@@ -102,11 +104,12 @@ def main():
     header = [norm(c) for c in rows[hdr_i]]
 
     def col(row, *names):
+        # match a header column whose normalized name starts with the target
+        # (tolerates parenthetical notes like "regular_price (note: ...)")
         for n in names:
-            if n in header:
-                idx = header.index(n)
-                if idx < len(row):
-                    return row[idx].strip()
+            for idx, h in enumerate(header):
+                if h and h.startswith(n):
+                    return row[idx].strip() if idx < len(row) else ""
         return ""
 
     data, skipped = [], []
