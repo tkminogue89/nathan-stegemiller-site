@@ -640,6 +640,28 @@ a.contact-card:hover { border-color: var(--accent); transform: translateY(-3px);
   justify-content: center;
 }
 .lightbox-close:hover { background: rgba(244, 241, 234, 0.2); }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 241, 234, 0.4);
+  background: rgba(244, 241, 234, 0.1);
+  color: var(--bg);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-nav:hover { background: rgba(244, 241, 234, 0.2); }
+.lightbox-prev { left: clamp(0.75rem, 2vw, 2rem); }
+.lightbox-next { right: clamp(0.75rem, 2vw, 2rem); }
+
 body.lb-open { overflow: hidden; }
 
 /* ---------- FOOTER ---------- */
