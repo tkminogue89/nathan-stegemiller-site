@@ -50,9 +50,12 @@ def main():
         p["order"] = float(p["order"]) if str(p.get("order", "")).strip() != "" else 9999
 
     hero = [p for p in data if p.get("section", "").lower() == "hero"]
-    gallery = sorted([p for p in data if p.get("section", "").lower() == "gallery"], key=lambda p: p["order"])
-    sale = sorted([p for p in data if p.get("section", "").lower() == "sale"],
-                  key=lambda p: (p.get("status", "Available").lower() != "available", p["order"]))
+    hero_ids = {id(p) for p in hero}
+    # Route by STATUS (per owner note): Sold -> Past Work gallery, Available -> Studio Sale.
+    gallery = sorted([p for p in data if id(p) not in hero_ids and p.get("status", "").lower() == "sold"],
+                     key=lambda p: p["order"])
+    sale = sorted([p for p in data if id(p) not in hero_ids and p.get("status", "").lower() == "available"],
+                  key=lambda p: p["order"])
 
     ALT = 'Relief painting by Nate Stegemiller'
 
@@ -70,8 +73,6 @@ def main():
     # SALE
     cards = []
     for p in sale:
-        sold = p.get("status", "Available").lower() != "available"
-        cls = "sale-item sold" if sold else "sale-item"
         reg, sal = p.get("regular"), p.get("sale")
         on_sale = bool(p.get("on_sale")) and sal not in (None, "", 0)
         if on_sale:
@@ -82,12 +83,9 @@ def main():
             eff = price(reg)
         meta = f'\n            <p class="sale-meta">{dims_fmt(p.get("dims",""))}</p>' if p.get("dims") else ""
         note = f'\n            <p class="sale-note-item">{esc(p.get("notes",""))}</p>' if p.get("notes") else ""
-        if sold:
-            action = '<span class="btn btn-sm btn-disabled">Sold</span>'
-        else:
-            tag = f'Studio Sale · piece #{p.get("ref","")} ({eff})'
-            action = f'<button type="button" class="btn btn-sm js-buy" data-piece="{esc(tag)}">Inquire to buy</button>'
-        cards.append(f'''        <article class="{cls}">
+        tag = f'Studio Sale · piece #{p.get("ref","")} ({eff})'
+        action = f'<button type="button" class="btn btn-sm js-buy" data-piece="{esc(tag)}">Inquire to buy</button>'
+        cards.append(f'''        <article class="sale-item">
           <figure class="artframe square">
             <img src="{p["img"]}" loading="lazy" alt="{ALT}" />
           </figure>
