@@ -55,6 +55,11 @@ def optimize(path):
         pass
     try:
         from PIL import Image
+        try:
+            import pillow_heif  # enables HEIC/HEIF input if installed
+            pillow_heif.register_heif_opener()
+        except Exception:
+            pass
         im = Image.open(path).convert("RGB")
         im.thumbnail((1600, 1600))
         im.save(path, "JPEG", quality=80)
