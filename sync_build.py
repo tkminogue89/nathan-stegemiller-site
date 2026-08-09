@@ -16,6 +16,7 @@ Run:    python3 sync_build.py
 import csv, io, json, os, re, sys, hashlib, subprocess, urllib.request
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+HTML = os.path.join(ROOT, "index.html")
 LIB = os.path.join(ROOT, "images", "library")
 os.makedirs(LIB, exist_ok=True)
 
@@ -97,6 +98,58 @@ def ensure_image(row):
 def truthy(v):
     return str(v).strip().lower() in ("true", "yes", "1", "y", "x")
 
+def esc_text(s):
+    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+def linkify_ig(s):
+    return esc_text(s).replace(
+        "@natesteg.art",
+        '<a href="https://www.instagram.com/natesteg.art/" target="_blank" rel="noopener">@natesteg.art&nbsp;↗</a>')
+
+def apply_copy():
+    """Read the Site Copy tab and inject each slot's text into data-copy elements."""
+    cfg = os.path.join(ROOT, "config.json")
+    url = ""
+    if os.path.exists(cfg):
+        url = json.load(open(cfg)).get("copy_csv_url", "").strip()
+    if not url:
+        print("No copy_csv_url set; skipping copy sync.")
+        return
+    rows = list(csv.reader(io.StringIO(fetch(url).decode("utf-8", "replace"))))
+    hi = next((i for i, r in enumerate(rows) if r and norm(r[0]) == "slot"), None)
+    if hi is None:
+        print("Copy tab: no 'slot' header found; skipping copy sync.")
+        return
+    header = [norm(c) for c in rows[hi]]
+    si, ti = header.index("slot"), (header.index("text") if "text" in header else len(rows[hi]) - 1)
+    copy = {}
+    for r in rows[hi + 1:]:
+        if len(r) > si and r[si].strip():
+            copy[r[si].strip()] = r[ti].strip() if len(r) > ti else ""
+
+    html = open(HTML).read()
+    applied, missing = 0, []
+    for slot, text in copy.items():
+        if not text:
+            continue
+        if slot == "about_body":
+            paras = [esc_text(p.strip()) for p in re.split(r"\n\s*\n", text) if p.strip()]
+            value = "\n          " + "\n          ".join(f"<p>{p}</p>" for p in paras) + "\n        "
+        elif slot == "hero_headline":
+            value = esc_text(text).replace("\n", "<br />") if "\n" in text else esc_text(text).replace(", ", ",<br />", 1)
+        elif slot == "sale_note":
+            value = linkify_ig(text)
+        else:
+            value = esc_text(text)
+        pat = re.compile(r'(<(?P<tag>[a-zA-Z0-9]+)[^>]*\bdata-copy="' + re.escape(slot) + r'"[^>]*>).*?(</(?P=tag)>)', re.DOTALL)
+        html, n = pat.subn(lambda m: m.group(1) + value + m.group(3), html, count=1)
+        if n:
+            applied += 1
+        else:
+            missing.append(slot)
+    open(HTML, "w").write(html)
+    print(f"Copy sync: applied {applied} slots." + (f" Missing in HTML: {missing}" if missing else ""))
+
 def main():
     raw = fetch(load_csv_url()).decode("utf-8", "replace")
     rows = list(csv.reader(io.StringIO(raw)))
@@ -148,6 +201,7 @@ def main():
     json.dump(data, open(os.path.join(ROOT, "data.json"), "w"), indent=2, ensure_ascii=False)
     print(f"Wrote data.json: {len(data)} pieces. Skipped (no image): {skipped or 'none'}")
     subprocess.run([sys.executable, os.path.join(ROOT, "build.py")], check=True)
+    apply_copy()
 
 if __name__ == "__main__":
     main()
