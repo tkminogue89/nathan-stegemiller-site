@@ -9,6 +9,35 @@ nav.addEventListener("click", (e) => {
   if (e.target.closest("a")) nav.classList.remove("open");
 });
 
+// Lightbox: click any Past Work / Studio Sale image to enlarge
+const lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  const lbImg = document.getElementById("lightbox-img");
+  const closeBtn = document.getElementById("lightbox-close");
+  const open = (src, alt) => {
+    lbImg.src = src;
+    lbImg.alt = alt || "Artwork by Nate Stegemiller";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lb-open");
+  };
+  const close = () => {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lb-open");
+    lbImg.src = "";
+  };
+  document.querySelectorAll(".gallery figure img, .sale-item .artframe img").forEach((img) => {
+    img.addEventListener("click", () => open(img.currentSrc || img.src, img.alt));
+  });
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target === closeBtn) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("open")) close();
+  });
+}
+
 // Gallery carousel: arrows + "See all work" expand toggle
 const gallery = document.getElementById("gallery");
 if (gallery) {

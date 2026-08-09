@@ -598,6 +598,50 @@ a.contact-card:hover { border-color: var(--accent); transform: translateY(-3px);
 }
 .contact-value { font-size: 1.05rem; }
 
+/* ---------- LIGHTBOX ---------- */
+.gallery figure img,
+.sale-item .artframe img { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(20, 20, 18, 0.92);
+  backdrop-filter: blur(4px);
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+}
+.lightbox-close {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(1rem, 2.5vw, 2rem);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 241, 234, 0.4);
+  background: rgba(244, 241, 234, 0.1);
+  color: var(--bg);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-close:hover { background: rgba(244, 241, 234, 0.2); }
+body.lb-open { overflow: hidden; }
+
 /* ---------- FOOTER ---------- */
 .site-footer {
   max-width: var(--maxw);
