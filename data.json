@@ -822,7 +822,7 @@
     "order": 9999,
     "dims": "23\"x29\"",
     "regular": "150",
-    "sale": "125",
+    "sale": "100",
     "on_sale": true,
     "status": "Available",
     "notes": ""
@@ -835,7 +835,7 @@
     "dims": "24\"x18\"",
     "regular": "125",
     "sale": "100",
-    "on_sale": false,
+    "on_sale": true,
     "status": "Available",
     "notes": ""
   },
@@ -846,8 +846,8 @@
     "order": 9999,
     "dims": "48\"x32\"",
     "regular": "225",
-    "sale": "200",
-    "on_sale": false,
+    "sale": "150",
+    "on_sale": true,
     "status": "Available",
     "notes": ""
   },
@@ -872,6 +872,30 @@
     "regular": "375",
     "sale": "350",
     "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "",
+    "img": "images/library/ae4bea51e2.jpg",
+    "section": "Gallery",
+    "order": 9999,
+    "dims": "48\"x24\"",
+    "regular": "300",
+    "sale": "250",
+    "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "",
+    "img": "images/library/dce5d38ef5.jpg",
+    "section": "Sale",
+    "order": 9999,
+    "dims": "46\"x15\"",
+    "regular": "100",
+    "sale": "75",
+    "on_sale": true,
     "status": "Sold",
     "notes": ""
   }
