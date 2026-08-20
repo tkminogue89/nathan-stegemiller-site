@@ -169,6 +169,9 @@ if (form) {
         note.innerHTML = `Thank you — your inquiry is in. Your reference is <strong>${ref}</strong>; I'll be in touch soon.`;
         note.classList.add("form-note-sent");
         submitBtn.style.display = "none";
+        if (typeof gtag === "function") {
+          gtag("event", "generate_lead", { form_id: "inquiry-form", reference: ref });
+        }
       } else if ((data.message || "").toLowerCase().includes("activat")) {
         // One-time FormSubmit activation pending (owner setup only)
         submitBtn.disabled = false;
