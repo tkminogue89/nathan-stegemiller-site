@@ -56,7 +56,7 @@
     "regular": "125",
     "sale": "100",
     "on_sale": true,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
@@ -732,8 +732,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/d591a1b5ce.jpg",
+    "ref": "88",
+    "img": "images/library/88.jpg",
     "section": "Gallery",
     "order": 9999,
     "dims": "58\"x29\"",
@@ -744,8 +744,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/bf7b2a6c49.jpg",
+    "ref": "89",
+    "img": "images/library/89.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "23\"x29\"",
@@ -756,20 +756,20 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/a2e3849e61.jpg",
+    "ref": "90",
+    "img": "images/library/90.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "36\"x24\"",
     "regular": "150",
     "sale": "125",
     "on_sale": true,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/063a081408.jpg",
+    "ref": "91",
+    "img": "images/library/91.jpg",
     "section": "Gallery",
     "order": 9999,
     "dims": "24\"x18\"",
@@ -780,8 +780,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/83824ca6b2.jpg",
+    "ref": "92",
+    "img": "images/library/92.jpg",
     "section": "Gallery",
     "order": 9999,
     "dims": "58\"x29\"",
@@ -792,8 +792,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/43d616c68c.jpg",
+    "ref": "93",
+    "img": "images/library/93.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "24\"x18\"",
@@ -804,8 +804,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/39d42672f5.jpg",
+    "ref": "94",
+    "img": "images/library/94.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "24\"x30\"",
@@ -816,8 +816,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/17406c9444.jpg",
+    "ref": "95",
+    "img": "images/library/95.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "23\"x29\"",
@@ -828,8 +828,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/a181caa56d.jpg",
+    "ref": "96",
+    "img": "images/library/96.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "24\"x18\"",
@@ -840,8 +840,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/5a83398cf9.jpg",
+    "ref": "97",
+    "img": "images/library/97.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "48\"x32\"",
@@ -852,20 +852,20 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/11758ececa.jpg",
+    "ref": "98",
+    "img": "images/library/98.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "24\"x18\"",
     "regular": "125",
     "sale": "100",
     "on_sale": false,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/dc8af8b1e2.jpg",
+    "ref": "99",
+    "img": "images/library/99.jpg",
     "section": "Gallery",
     "order": 9999,
     "dims": "48\"x48\"",
@@ -876,8 +876,8 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/ae4bea51e2.jpg",
+    "ref": "100",
+    "img": "images/library/100.jpg",
     "section": "Gallery",
     "order": 9999,
     "dims": "48\"x24\"",
@@ -888,14 +888,14 @@
     "notes": ""
   },
   {
-    "ref": "",
-    "img": "images/library/dce5d38ef5.jpg",
+    "ref": "101",
+    "img": "images/library/101.jpg",
     "section": "Sale",
     "order": 9999,
     "dims": "46\"x15\"",
     "regular": "100",
     "sale": "75",
-    "on_sale": true,
+    "on_sale": false,
     "status": "Sold",
     "notes": ""
   }
