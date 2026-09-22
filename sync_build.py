@@ -171,7 +171,7 @@ def main():
         return ""
 
     data, skipped = [], []
-    for r in rows[hdr_i + 1:]:
+    for i, r in enumerate(rows[hdr_i + 1:]):
         if not any(c.strip() for c in r):
             continue
         section = col(r, "section")
@@ -185,11 +185,16 @@ def main():
         if not img:
             skipped.append(col(r, "ref") or col(r, "imageurl") or "?")
             continue
+        # Rows lower in the sheet are newer. Without an explicit "order",
+        # default to a value that sorts newer rows first (top of the
+        # section) while still leaving room for manual low-number pins.
+        order_val = col(r, "order")
+        order = order_val if order_val else 9000 - i
         data.append({
             "ref": col(r, "ref"),
             "img": img,
             "section": section,
-            "order": col(r, "order") or 9999,
+            "order": order,
             "dims": col(r, "dimensions", "dims"),
             "regular": col(r, "regularprice", "regular", "price"),
             "sale": col(r, "saleprice", "sale"),
