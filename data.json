@@ -230,13 +230,13 @@
   {
     "ref": "25",
     "img": "images/catalog/25.jpg",
-    "section": "Sale",
+    "section": "Gallery",
     "order": 9999,
     "dims": "36\"x24\"",
     "regular": "175",
     "sale": "150",
     "on_sale": true,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
@@ -247,7 +247,7 @@
     "dims": "45\"x30\"",
     "regular": "275",
     "sale": "250",
-    "on_sale": false,
+    "on_sale": true,
     "status": "Sold",
     "notes": ""
   },
@@ -350,13 +350,13 @@
   {
     "ref": "38",
     "img": "images/catalog/38.jpg",
-    "section": "Gallery",
+    "section": "Sale",
     "order": 9999,
     "dims": "12\"x16\"",
     "regular": "75",
     "sale": "60",
     "on_sale": false,
-    "status": "Sold",
+    "status": "Available",
     "notes": ""
   },
   {
@@ -794,13 +794,13 @@
   {
     "ref": "93",
     "img": "images/library/93.jpg",
-    "section": "Sale",
+    "section": "Gallery",
     "order": 9999,
     "dims": "24\"x18\"",
     "regular": "150",
     "sale": "125",
     "on_sale": true,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
@@ -818,25 +818,25 @@
   {
     "ref": "95",
     "img": "images/library/95.jpg",
-    "section": "Sale",
+    "section": "Gallery",
     "order": 9999,
     "dims": "23\"x29\"",
     "regular": "150",
     "sale": "100",
     "on_sale": true,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
     "ref": "96",
     "img": "images/library/96.jpg",
-    "section": "Sale",
+    "section": "Gallery",
     "order": 9999,
     "dims": "24\"x18\"",
     "regular": "125",
     "sale": "100",
     "on_sale": true,
-    "status": "Available",
+    "status": "Sold",
     "notes": ""
   },
   {
@@ -897,6 +897,126 @@
     "sale": "75",
     "on_sale": false,
     "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "102",
+    "img": "images/library/102.jpg",
+    "section": "Gallery",
+    "order": 9999,
+    "dims": "36\"x24\"",
+    "regular": "150",
+    "sale": "125",
+    "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "103",
+    "img": "images/library/103.jpg",
+    "section": "Sale",
+    "order": 9999,
+    "dims": "29\"x58\"",
+    "regular": "200",
+    "sale": "150",
+    "on_sale": true,
+    "status": "Available",
+    "notes": ""
+  },
+  {
+    "ref": "104",
+    "img": "images/library/104.jpg",
+    "section": "Gallery",
+    "order": 9999,
+    "dims": "30\"x24\"",
+    "regular": "150",
+    "sale": "125",
+    "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "105",
+    "img": "images/library/105.jpg",
+    "section": "Gallery",
+    "order": 9999,
+    "dims": "44\"x34\"",
+    "regular": "200",
+    "sale": "150",
+    "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "106",
+    "img": "images/library/106.jpg",
+    "section": "Gallery",
+    "order": 9999,
+    "dims": "48\"x24\"",
+    "regular": "250",
+    "sale": "225",
+    "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "107",
+    "img": "images/library/107.jpg",
+    "section": "Gallery",
+    "order": 9999,
+    "dims": "36\"x24\"",
+    "regular": "200",
+    "sale": "175",
+    "on_sale": false,
+    "status": "Sold",
+    "notes": ""
+  },
+  {
+    "ref": "108",
+    "img": "images/library/108.jpg",
+    "section": "Sale",
+    "order": 9999,
+    "dims": "24\"",
+    "regular": "150",
+    "sale": "125",
+    "on_sale": true,
+    "status": "Available",
+    "notes": ""
+  },
+  {
+    "ref": "109",
+    "img": "images/library/109.jpg",
+    "section": "Sale",
+    "order": 9999,
+    "dims": "36\"x24\"",
+    "regular": "150",
+    "sale": "125",
+    "on_sale": true,
+    "status": "Available",
+    "notes": ""
+  },
+  {
+    "ref": "110",
+    "img": "images/library/110.jpg",
+    "section": "Sale",
+    "order": 9999,
+    "dims": "60\"x20\"",
+    "regular": "250",
+    "sale": "225",
+    "on_sale": true,
+    "status": "Available",
+    "notes": ""
+  },
+  {
+    "ref": "111",
+    "img": "images/library/111.jpg",
+    "section": "Sale",
+    "order": 9999,
+    "dims": "48\"x36\"",
+    "regular": "200",
+    "sale": "175",
+    "on_sale": true,
+    "status": "Available",
     "notes": ""
   }
 ]
